@@ -9,6 +9,13 @@ body{
     --bgColour: hsl(0, 0%, 98%);
     --fontcolour: hsl(207, 26%, 17%);
 }
+.dark{
+    --bgColour:  hsl(209, 23%, 22%);
+    --fontcolour:hsl(0, 0%, 98%);
+    background: var(--bgColour);
+    color: var(--fontcolour);
+    --countrybgColour: hsl(207, 26%, 17%)
+}
 .container{
     width: 100%;
     padding: 30px;
@@ -17,15 +24,18 @@ body{
 }
 .container:nth-child(1){
     box-shadow:0 0 5px rgba(0, 0, 0, 0.3);
+    background: var(--countrybgColour);
 }
 button{
     outline: none;
     border: 0;
     background: transparent;
+    color: var(--fontcolour);
 }
 .toggle{
     font-size: 18px;
     cursor: pointer;
+    color: var(--fontcolour);
 }
 .toggle i{
     padding-right: 5px;
@@ -36,15 +46,17 @@ button{
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    height: 67px;
+    background: var(--countrybgColour);
 }
 .form-control input{
-    width: 1111px;
-    padding: 17px 15px;
+    width: 100px;
+    padding: 17px 14px;
     outline: 0;
     border: 0;
     font-size: 14px;
-    letter-spacing: 0.7px
+    letter-spacing: 0.7px;
+    background: transparent;
+    color: var(--fontcolour);
 }
 .form-control i{
     position: absolute;
@@ -52,21 +64,27 @@ button{
     right: 1rem;
     cursor:progress;
 }
+i{
+    cursor: pointer;
+}
 .dropDownCon{
     width: 200px;
     position: relative;
+    background: var(--countrybgColour);
+    border-radius: 5px;
 }
 .dropDown{
     width: 100px;
-    padding: 11px 14px;
+    padding: 17px 14px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     font-size: 15px;
-    margin: 3px;
+    color: var(--fontcolour);
 }
+
 .dropDown p{
     letter-spacing: 0.5px;
 }
@@ -79,6 +97,7 @@ button{
     width: 100%;
     border-radius: 5px;
     background: var(--bgColour);
+    cursor: pointer;
 }
 .drop p{
     margin: 5px 0;
@@ -86,24 +105,26 @@ button{
 .countries{
     padding: 30px;
     display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px, 1fr));
     grid-gap: 20px;
-    position: relative;
 }
 .country{
     min-height: 350px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    width: 300px;
+    /* width: 300px; */
     border-radius: 5px;
     overflow: hidden;
-    
-}
-/* .country-img{
-    height: 250px;
+    background: var(--countrybgColour);
 }
 .country-img{
-    width: 100%;
-    height: 100%;
-} */
+    height: 250px;
+}
+.country-img img{
+    width: 297px;
+    height: px;
+    object-fit: cover;
+}
+
 .country-info{
     padding: 20px 17px;
 }
@@ -116,5 +137,66 @@ button{
     letter-spacing: 1px;
 }
 .country-info p>strong{
-    font-weight: 601;
+    font-weight: 600;
+}
+.showDropDowm{
+    display: none;
+}
+.countryModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bgColour);
+    padding: 30px;
+}
+.back{
+    position: absolute;
+    top: 4rem;
+    left: 30px;
+    background: #fdfdfd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.leftModal{
+    width: 50%;
+}
+.leftModal img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rightModal{
+    width: 50%;
+    margin-left: 40px;
+}
+.modelInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.rightModal h1{
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+.inner p{
+    letter-spacing: 1px;
+}
+.inner p>strong{
+    font-weight: 600;
+}
+.show{
+    display: none;
 }
