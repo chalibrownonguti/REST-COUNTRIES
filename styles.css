@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    --bgColour: hsl(0, 0%, 98%);
+    --fontcolour: hsl(207, 26%, 17%);
+}
+.dark{
+    --bgColour:  hsl(209, 23%, 22%);
+    --fontcolour:hsl(0, 0%, 98%);
+    background: var(--bgColour);
+    color: var(--fontcolour);
+    --countrybgColour: hsl(207, 26%, 17%)
+}
