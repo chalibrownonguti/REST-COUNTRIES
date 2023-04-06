@@ -48,3 +48,54 @@ button{
     overflow: hidden;
     background: var(--countrybgColour);
 }
+.form-control input{
+    width: 270px;
+    padding: 17px 14px;
+    outline: 0;
+    border: 0;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    background: transparent;
+    color: var(--fontcolour);
+}
+.form-control i{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor:progress;
+}
+i{
+    cursor: pointer;
+}
+.dropDownCon{
+    width: 200px;
+    position: relative;
+    background: var(--countrybgColour);
+    border-radius: 5px;
+}
+.dropDown{
+    width: 150px;
+    padding: 17px 14px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--fontcolour);
+}
+
+.dropDown p{
+    letter-spacing: 0.5px;
+}
+
+.drop{
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    top: 4rem;
+    padding: 10px 14px;
+    width: 100%;
+    border-radius: 5px;
+    background: var(--bgColour);
+    cursor: pointer;
+}
