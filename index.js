@@ -1,3 +1,4 @@
+// Selectin DOM elements
 const countriesElem = document.querySelector(".countries")
 // const dropDown = document.querySelector(".dropDown dropDown")
 // const dropElem = document.querySelector(".drop")
@@ -5,7 +6,7 @@ const region = document.querySelectorAll(".region")
 const search = document.querySelector(".search")
 const toggle = document.querySelector(".toggle")
 const moon = document.querySelector(".moon")
-
+// Fetching data from the API
 async function getCountry() {
     try{
     const url = await fetch("https://restcountries.com/v3.1/all");
@@ -20,6 +21,7 @@ async function getCountry() {
     }
 }
 getCountry()
+// Function to display country information
 function showCountry(data) {
     const country = document.createElement("div");
     country.classList.add("country")
@@ -45,6 +47,8 @@ function showCountry(data) {
     
 //     // console.log("dropDown")
 // })
+
+// Filtering countries by region
 const regionName = document.getElementsByClassName("regionName")
 const countryName = document.getElementsByClassName("countryName")
 region.forEach(element => {
@@ -60,7 +64,7 @@ region.forEach(element => {
         });
     });
 });
-
+// searching for countries by name
 search.addEventListener("input", () => {
     console.log(search.value.toLowerCase());
     Array.from(countryName).forEach(elem => {
@@ -71,11 +75,14 @@ search.addEventListener("input", () => {
         }
     });
 })
+
+// Toggling dark mode
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark")
     moon.classList.toggle("fas")
 })
 
+// Functio to display country detail modal
 const countryModal = document.querySelector(".countryModal");
 function showCountryDetail(data) {
     countryModal.classList.toggle("show")
@@ -104,12 +111,14 @@ function showCountryDetail(data) {
 </div>`
     
 }
+
+// Backling back modal
 const back = countryModal.querySelector(".back")
     back.addEventListener("click", () => {
         countryModal.classList.toggle("show")
     })
 
-
+// Fetching countries from the API
 async function getCountriesByRegion(region) {
   const response = await fetch(`https://restcountries.com/v3.1/all`);
   const data = await response.json();
